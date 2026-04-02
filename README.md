@@ -32,17 +32,10 @@ Push_Swap subject permits us to use the following ####Operations\
 ## Resources
 
 ### Websites
+`https://42-cursus.gitbook.io/guide/2-rank-02/push_swap\
+https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e`
 ### YouTube
+`Oceano`
 ### LLMs
-
-
-# Scratchpad
-
-## Algorithm Chosen
-K-Sort
-
-## 
-
-"3" "1" "4" "5 8 0" --> ft_split
-inside dub quotes, split them
-./a.out 1 3 5 6 7 8
+`Claude\
+ChatGPT`
