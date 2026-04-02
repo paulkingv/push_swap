@@ -3,7 +3,7 @@
 # push_swap
 PUSH_SWAP is a project where we must choose and implement an algorithm to sort a set of numbers into ascending order in the fewest amount of steps.\
 
-We are allowed the use of two *stacks*, called **stack_a** and **stack_b**, to use to sort our set of numbers. A stack, in my implementation, will be a linked list.
+We are allowed the use of two *stacks*, called **stack_a** and **stack_b**, to use to sort our set of numbers. A stack, in my implementation, will be an array.
 
 ## Description
 ### Rules
