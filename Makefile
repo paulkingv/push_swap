@@ -1,7 +1,7 @@
 NAME	= push_swap
 
 CC		= cc
-CFLAGS	= -Wall -Werror -Wextra -I include
+CFLAGS	= -Wall -Werror -Wextra -I include -g
 
 SRC_DIR	= src
 
