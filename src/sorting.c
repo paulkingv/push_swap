@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pking <pking@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 15:29:24 by pking             #+#    #+#             */
-/*   Updated: 2026/04/01 18:02:31 by pking            ###   ########.fr       */
+/*   Updated: 2026/05/17 20:37:08 by pking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static  void    rotate_min_to_top(t_stack *stack)
 }
 
 // STUDY THIS; 
-void    sort_three_size(t_stack *stack)
+void    sort_three(t_stack *stack)
 {
     int a;
     int b;
@@ -63,7 +63,7 @@ void    sort_three_size(t_stack *stack)
 }
 
 // Study this; Understand it; Rewrite
-void    sort_four_to_five_size(t_stack *stack)
+void    sort_fourfive(t_stack *stack)
 {
     if (stack->a_size == 5)
     {
@@ -72,12 +72,12 @@ void    sort_four_to_five_size(t_stack *stack)
     }
     rotate_min_to_top(stack);
     push(stack->a, &stack->a_size, stack->b, &stack->b_size, "pb");
-    sort_three_size(stack);
+    sort_three(stack);
     while(stack->b_size > 0)
         push(stack->b, &stack->b_size, stack->a, &stack->a_size, "pa");
 }
 
-void    radix_sort(t_stack *stack)
+void    radix(t_stack *stack)
 {
     int i;
     int j;

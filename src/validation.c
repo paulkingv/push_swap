@@ -5,72 +5,62 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pking <pking@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/26 15:37:17 by pking             #+#    #+#             */
-/*   Updated: 2026/04/01 18:02:17 by pking            ###   ########.fr       */
+/*   Created: 2026/04/15 17:45:28 by pking             #+#    #+#             */
+/*   Updated: 2026/05/18 15:47:47 by pking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long    ft_atol(char *s)
+//valid
+// check if we have digit at all positions in str
+int has_digit(char *str)
 {
-    long    n;
-    int     sign;
-    int     i;
+    int i;
 
-    n = 0;
-    sign = 1;
-    i = 0;
-    if (s[i] == '+' || s[i] == '-')
-    {
-        if(s[i] == '-')
-            sign = -1;
-        i++;
-    }
-    while (s[i] >= '0' && s[i] <= '9')
-    {
-        n = n * 10 + (s[i] - '0');
-        i++;
-    }
-    return (n * sign);
-}
-
-static  int is_valid_str(char *s)
-{
-    int     i;
-    long    n;
-
-    i = 0;
-    if (!s || !s[0])
+    i=0;
+    if (!str || !str[0])
         return(0);
-    if (s[i] == '+' || s[i] == '-')
-        i++;
-    if (!s[i])
-        return (0);
-    while (s[i])
+    if(str[0] == '-' || str[0] == '+' )
     {
-        if (s[i] < '0' || s[i] > '9')
+        if(str[1] == '\0' || !ft_isdigit((unsigned char)str[1]) )
+            return (0);
+        i = 1;
+    }
+    while(str[i])
+    {
+        if (!ft_isdigit((unsigned char)str[i]))
             return (0);
         i++;
     }
-    n = ft_atol(s);
-    if (n > 2147483647 || n < -2147483648)
-        return (0);
     return (1);
 }
 
-int is_valid(char **args)
+int has_overflow(char *str)
+{
+    long n;
+
+    n = 0;
+    n = ft_atol(str);
+    if (n > 2147483647 || n < -2147483648)
+        return (1);
+    return (0);
+}
+
+int valid_args(char **args)
 {
     int i;
 
     i = 0;
     while (args[i])
     {
-        if (!is_valid_str(args[i]))
+        if(!has_digit(args[i])) // Checks if is digit
+            return (0);
+        if(has_overflow(args[i]))
             return (0);
         i++;
     }
-    return (1);
+    return (1); // not true
 }
 
 int is_array_sorted(int *arr, int size)
@@ -80,7 +70,7 @@ int is_array_sorted(int *arr, int size)
     i = 0;
     while (i < size - 1)
     {
-        if (arr[i] > arr[i+1])
+        if (arr[i] > arr[i + 1])
             return (0);
         i++;
     }

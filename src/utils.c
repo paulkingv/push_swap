@@ -5,19 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pking <pking@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/26 15:29:41 by pking             #+#    #+#             */
-/*   Updated: 2026/03/31 13:32:09 by pking            ###   ########.fr       */
+/*   Created: 2026/04/16 17:57:28 by pking             #+#    #+#             */
+/*   Updated: 2026/04/24 16:52:41 by pking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void    ft_putendl_fd(char *s, int fd)
-{
-    while (*s)
-        write(fd, s++, 1);
-    write(fd, "\n", 1);
-}
 
 void    free_all(t_stack *stack)
 {
@@ -35,41 +28,24 @@ void    free_all(t_stack *stack)
     if (stack->b)
         free(stack->b);
 }
-static void fill_ranks(t_stack *stack, int *ranks)
+
+void init_stacks(t_stack *stack)
+{
+    stack->a = NULL;
+    stack->b = NULL;
+    stack->a_size = 0;
+    stack->b_size = 0;
+}
+
+int count_array(char **argv)
 {
     int i;
-    int j;
-    int rank;
 
     i = 0;
-    while (i < stack->a_size)
-    {
-        rank = 0;
-        j = 0;
-        while (j < stack->a_size)
-        {
-            if (stack->a[j] < stack->a[i])
-                rank++;
-            j++;
-        }
-        ranks[i] = rank;
+    while (argv[i])
         i++;
-    }
+    return (i);
 }
-void    index_stack(t_stack *stack)
-{
-    int *ranks;
-    int i;
 
-    ranks = malloc(sizeof(int) * stack->a_size);
-    if (!ranks)
-        error_msg(stack);
-    fill_ranks(stack, ranks);
-    i = 0;
-    while (i < stack->a_size)
-    {
-        stack->a[i] = ranks[i];
-        i++;
-    }
-    free(ranks);
-}
+
+

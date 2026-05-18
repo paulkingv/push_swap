@@ -6,7 +6,7 @@
 /*   By: pking <pking@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 15:29:06 by pking             #+#    #+#             */
-/*   Updated: 2026/04/01 18:02:17 by pking            ###   ########.fr       */
+/*   Updated: 2026/05/17 20:35:53 by pking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,3 +84,4 @@ void    push(int *src, int *src_size, int *dst, int *dst_size, char *name)
     ft_putendl_fd(name, 1);
 }
 
+// Verified
