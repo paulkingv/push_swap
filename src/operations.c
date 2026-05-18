@@ -6,82 +6,80 @@
 /*   By: pking <pking@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/26 15:29:06 by pking             #+#    #+#             */
-/*   Updated: 2026/05/17 20:35:53 by pking            ###   ########.fr       */
+/*   Updated: 2026/05/18 18:52:41 by pking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    swap(int *arr, char *name, int size)
+void	swap(int *arr, char *name, int size)
 {
-    int tmp;
+	int	tmp;
 
-    if (size < 2)
-        return;
-    tmp = arr[0];
-    arr[0] = arr[1];
-    arr[1] = tmp;
-    ft_putendl_fd (name, 1);
+	if (size < 2)
+		return ;
+	tmp = arr[0];
+	arr[0] = arr[1];
+	arr[1] = tmp;
+	ft_putendl_fd(name, 1);
 }
 
-void    rotate(int *arr, int size, char *name)
+void	rotate(int *arr, int size, char *name)
 {
-    int     tmp;
-    int     i;
+	int	tmp;
+	int	i;
 
-    if (size < 2)
-        return ;
-    tmp = arr[0];
-    i = 0;
-    while (i < size - 1)
-    {
-        arr[i] = arr[i + 1];
-        i++;
-    }
-    arr[size - 1] = tmp;
-    ft_putendl_fd(name, 1);
+	if (size < 2)
+		return ;
+	tmp = arr[0];
+	i = 0;
+	while (i < size - 1)
+	{
+		arr[i] = arr[i + 1];
+		i++;
+	}
+	arr[size - 1] = tmp;
+	ft_putendl_fd(name, 1);
 }
 
-void    reverse_rotate(int *arr, int size, char *name)
+void	reverse_rotate(int *arr, int size, char *name)
 {
-    int     tmp;
-    int     i;
+	int	tmp;
+	int	i;
 
-    if (size < 2)
-        return ;
-    tmp = arr[size - 1];
-    i = size - 1;
-    while (i > 0)
-    {
-        arr[i] = arr[i - 1];
-        i--;
-    }
-    arr[0] = tmp;
-    ft_putendl_fd(name, 1);
+	if (size < 2)
+		return ;
+	tmp = arr[size - 1];
+	i = size - 1;
+	while (i > 0)
+	{
+		arr[i] = arr[i - 1];
+		i--;
+	}
+	arr[0] = tmp;
+	ft_putendl_fd(name, 1);
 }
 
-void    push(int *src, int *src_size, int *dst, int *dst_size, char *name)
+void	push(int *src, int *src_size, int *dst, int *dst_size, char *name)
 {
-    int i;
+	int	i;
 
-    if (*src_size == 0)
-        return ;
-    i = *dst_size;
-    while (i > 0)
-    {
-        dst[i] = dst[i - 1];
-        i--;
-    }
-    dst[0] = src[0];
-    i = 0;
-    while (i < *src_size - 1)
-    {
-        src[i] = src[i + 1];
-        i++;
-    }
-    (*dst_size)++;
-    (*src_size)--;
-    ft_putendl_fd(name, 1);
+	if (*src_size == 0)
+		return ;
+	i = *dst_size;
+	while (i > 0)
+	{
+		dst[i] = dst[i - 1];
+		i--;
+	}
+	dst[0] = src[0];
+	i = 0;
+	while (i < *src_size - 1)
+	{
+		src[i] = src[i + 1];
+		i++;
+	}
+	(*dst_size)++;
+	(*src_size)--;
+	ft_putendl_fd(name, 1);
 }
-
-// Verified

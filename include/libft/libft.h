@@ -6,7 +6,7 @@
 /*   By: pking <pking@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 14:23:41 by pking             #+#    #+#             */
-/*   Updated: 2026/04/15 17:25:48 by pking            ###   ########.fr       */
+/*   Updated: 2026/05/18 18:47:31 by pking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 int					ft_atoi(const char *str);
-long				ft_atol (char *s);
+long				ft_atol(char *s);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
 int					ft_isalnum(int c);
@@ -44,7 +44,8 @@ size_t				ft_strlen(const char *str);
 
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
-char				*ft_strjoin_free(char const *s1, char const *s2, int free_s1, int free_s2);
+char				*ft_strjoin_free(char const *s1, char const *s2,
+						int free_s1, int free_s2);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);

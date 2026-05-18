@@ -6,29 +6,29 @@
 /*   By: pking <pking@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 15:57:32 by pking             #+#    #+#             */
-/*   Updated: 2026/04/15 17:26:09 by pking            ###   ########.fr       */
+/*   Updated: 2026/05/18 19:17:25 by pking            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long ft_atol (char *s)
+long	ft_atol(char *s)
 {
-    long n;
-    int sign;
-    int i;
+	long	n;
+	int		sign;
+	int		i;
 
-    n = 0;
-    sign = 1;
-    i = 0;
-    if (s[i] == '+' || s[i] == '-')
-    {
-        if (s[i] == '-')
-            sign = -1;
-        i++;
-    }
-    while (s[i] >= '0' && s[i] <= '9')
-    {
-        n = n * 10 + (s[i] - '0');
-        i++;
-    }
-    return (n * sign);
+	n = 0;
+	sign = 1;
+	i = 0;
+	if (s[i] == '+' || s[i] == '-')
+	{
+		if (s[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		n = n * 10 + (s[i] - '0');
+		i++;
+	}
+	return (n * sign);
 }
